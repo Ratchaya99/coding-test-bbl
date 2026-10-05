@@ -1,7 +1,12 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
+import { useFavorites } from '../../shared/provider/FavoriteContext';
 
 export default function ProductDetailScreen({ route }: any) {
   const { product } = route.params;
+
+  const { favorites, toggleFavorite } = useFavorites();
+
+  const isFavorite = favorites.some(item => item.id === product.id);
 
   return (
     <View style={styles.container}>
@@ -11,6 +16,10 @@ export default function ProductDetailScreen({ route }: any) {
         <View style={styles.itemInfo}>
           <Text style={styles.title}>{product.title}</Text>
           <Text style={styles.price}>{product.price.toLocaleString()} ฿</Text>
+          <Button
+            title={isFavorite ? 'Remove Favorite' : 'Add to Favorite'}
+            onPress={() => toggleFavorite(product)}
+          />
         </View>
       </View>
     </View>

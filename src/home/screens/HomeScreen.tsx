@@ -8,13 +8,7 @@ import {
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-interface Product {
-  id: number;
-  image: string;
-  title: string;
-  price: number;
-}
+import { Product } from '../../shared/type/product.type';
 
 const MOCK_DATA: Product[] = [
   { id: 1, image: '', title: 'iPhone 15', price: 30000 },
