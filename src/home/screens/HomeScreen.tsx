@@ -1,4 +1,5 @@
 import {
+  Button,
   FlatList,
   Image,
   Pressable,
@@ -53,9 +54,15 @@ export default function HomeScreen({ navigation }: any) {
       product: item,
     });
   };
+
+  const handleToFavorite = () => {
+    navigation.navigate('Favorite');
+  };
+
   return (
     <SafeAreaView edges={['left', 'right', 'bottom']}>
       <View style={styles.container}>
+        <Button title="Favorites" onPress={() => handleToFavorite()} />
         <Text style={styles.title}>Products</Text>
         <FlatList
           data={product}

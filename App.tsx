@@ -5,6 +5,7 @@ import HomeScreen from './src/home/screens/HomeScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import ProductDetailScreen from './src/product/screens/ProductDetailScreen';
 import { FavoriteProvider } from './src/shared/provider/FavoriteContext';
+import FavoriteScreen from './src/favorite/screens/FavoriteScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,11 @@ export default function App() {
               name="ProductDetail"
               component={ProductDetailScreen}
               options={{ title: 'Product Detail' }}
+            />
+            <Stack.Screen
+              name="Favorite"
+              component={FavoriteScreen}
+              options={{ title: 'Favorites' }}
             />
           </Stack.Navigator>
         </NavigationContainer>
