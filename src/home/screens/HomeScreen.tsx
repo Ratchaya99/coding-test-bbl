@@ -53,6 +53,12 @@ export default function HomeScreen({ navigation }: any) {
     await fetchData();
     setRefreshing(false);
   };
+
+  const handleToProductDetail = (item: Product) => {
+    navigation.navigate('ProductDetail', {
+      product: item,
+    });
+  };
   return (
     <SafeAreaView edges={['left', 'right', 'bottom']}>
       <View style={styles.container}>
@@ -63,16 +69,14 @@ export default function HomeScreen({ navigation }: any) {
           renderItem={({ item }) => (
             <Pressable
               style={styles.itemCard}
-              onPress={() =>
-                navigation.navigate('ProductDetail', {
-                  product: item,
-                })
-              }
+              onPress={() => handleToProductDetail(item)}
             >
               <Image source={{ uri: item.image }} style={styles.image} />
               <View style={styles.itemInfo}>
                 <Text style={styles.productTitle}>{item.title}</Text>
-                <Text style={styles.price}>{item.price.toLocaleString()} ฿</Text>
+                <Text style={styles.price}>
+                  {item.price.toLocaleString()} ฿
+                </Text>
               </View>
             </Pressable>
           )}

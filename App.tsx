@@ -3,7 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from './src/home/screens/HomeScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import ProductDetailScreen from './src/home/product/screens/ProductDetailScreen';
+import ProductDetailScreen from './src/screens/ProductDetailScreen';
 
 const Stack = createNativeStackNavigator();
 

@@ -10,7 +10,6 @@ export default function ProductDetailScreen({ route }: any) {
 
         <View style={styles.itemInfo}>
           <Text style={styles.title}>{product.title}</Text>
-
           <Text style={styles.price}>{product.price.toLocaleString()} ฿</Text>
         </View>
       </View>
